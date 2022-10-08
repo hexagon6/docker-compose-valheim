@@ -1,0 +1,20 @@
+volumes:
+  valheim_data:
+services:
+  valheim:
+    image: hexagon6/valheim
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "2456:2456"
+      - "2457:2457"
+    environment:
+      NAME: "server name"
+      WORLD: "world name"
+      PORT: 2456
+      SECRET: "santaclausisnotreal"
+    volumes:
+      - "valheim_data:/data"
+      - "./runfiles:/irongate:ro"
+    command: "./start_server.sh"
