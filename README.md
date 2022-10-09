@@ -16,13 +16,13 @@ Copy those files from your [steam folder] after installing Valheim Server via St
 
 If you want to use an existing World copy it into the docker volume: `valheim_data`. Make sure you put them at the right hierarchy. E.g. `adminlist.txt, bannedlist.txt, permittedlist.txt and world/` should all be in the same folder level.
 
-Use the Environment Variable WORLD to reference the World file, e.g. "Dedicated" for "Dedicated.db" in the worlds/ folder.
+Use the Environment Variable WORLD to reference the World file, e.g. "Dedicated" for "Dedicated.db" & "Dedicated.fwl" in the worlds_local/ folder.
 
 An example Game Server folder (using the local default path) looks like this:
 ```bash
 ls ~/.config/unity3d/IronGate/Valheim/
-adminlist.txt  bannedlist.txt  characters  permittedlist.txt  Player.log  Player-prev.log  prefs  worlds
-ls ~/.config/unity3d/IronGate/Valheim/worlds/
+adminlist.txt  bannedlist.txt  characters  permittedlist.txt  Player.log  Player-prev.log  prefs  worlds_local
+ls ~/.config/unity3d/IronGate/Valheim/worlds_local/
 Dedicated.db
 ```
 
