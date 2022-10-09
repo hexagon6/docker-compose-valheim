@@ -33,3 +33,6 @@ Dedicated.db
 2. Adjust Environment Variables, which are passed to `runfiles/start_server.sh`
 3. `docker compose up` (requires installation of [docker-compose-plugin](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository) for docker, not! docker-compose)
 
+## Warning: Shutdown only with SIGINT (CTRL+C) to valheim_server.x86_64
+Use the provided `stop_valheim_server.sh` script or manually send `kill -2 VALHEIM_PROCESS_ID` to the relevant process.
+Otherwise you might prevent the valheim server from saving the world state into the filesystem on shutdown since docker-compose does not pass on SIGINT to the process.

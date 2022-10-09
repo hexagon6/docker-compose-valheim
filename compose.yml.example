@@ -17,4 +17,5 @@ services:
     volumes:
       - "valheim_data:/data"
       - "./runfiles:/irongate:ro"
+    init: true
     command: "./start_server.sh"
