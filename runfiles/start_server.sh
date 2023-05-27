@@ -5,6 +5,11 @@
 export templdpath=$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=./linux64:$LD_LIBRARY_PATH
 export SteamAppId=892970
+## if DISABLE_CROSSPLAY is empty append crossplay parameter
+## if not -> omit it to start the server without crossplay support (may prevent network performance issues)
+if [ -z "$DISABLE_CROSSPLAY" ]; then
+  export crossplay=-crossplay
+fi
 
 echo "Starting server [${NAME}] with world: ${WORLD} PRESS CTRL-C to exit"
 
@@ -17,7 +22,7 @@ echo "Starting server [${NAME}] with world: ${WORLD} PRESS CTRL-C to exit"
 -port ${PORT:-2456} \
 -world ${WORLD:-"Dedicated"} \
 -password ${SECRET:-"secret"} \
--crossplay
+${crossplay}
 
 export LD_LIBRARY_PATH=$templdpath
 

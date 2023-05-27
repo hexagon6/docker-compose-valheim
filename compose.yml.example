@@ -14,6 +14,7 @@ services:
       WORLD: "world name"
       PORT: 2456
       SECRET: "santaclausisnotreal"
+      DISABLE_CROSSPLAY: y # remove variable if you want crossplay
     volumes:
       - "valheim_data:/data"
       - "./runfiles:/irongate:ro"
