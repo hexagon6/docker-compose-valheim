@@ -21,3 +21,4 @@ services:
       - "./runfiles:/irongate:ro"
     init: true
     command: "./start_server.sh"
+    restart: always
