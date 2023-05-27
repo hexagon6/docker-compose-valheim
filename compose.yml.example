@@ -9,6 +9,7 @@ services:
     ports:
       - "2456:2456"
       - "2457:2457"
+      - "2458:2458"
     environment:
       NAME: "server name"
       WORLD: "world name"
